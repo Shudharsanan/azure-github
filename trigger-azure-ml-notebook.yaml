@@ -16,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.x'
+        python-version: '3.8'
 
     - name: Install Azure ML SDK
       run: |
@@ -29,7 +29,7 @@ jobs:
 
     - name: Trigger Notebook Execution in Azure ML
       run: |
-        python trigger_azureml_notebook.py
+        python trigger_notebook.py
       env:
         AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}
