@@ -29,5 +29,9 @@ run = experiment.submit(
 script = 'Users/shudharsananm.1989/my_own_code/github_actions_testing.py',
 compute_target = compute_target)
 
-
-print(f'Notebbook execution triggered with run ID: {run_id}')
+if run.status == 'completed':
+  print("Run completed")
+elif run.status == 'Failed':
+  print(f"Run failed with error: {run.error}")
+else:
+  print(f'Run was {run.status}')
